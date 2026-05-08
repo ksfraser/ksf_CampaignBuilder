@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Tests\Unit;
+namespace Ksfraser\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Ksfraser\CampaignBuilder\Entity\Campaign;
