@@ -106,25 +106,30 @@ final class CampaignEntityTest extends TestCase
 
     public function testCampaignValidationSuccess(): void
     {
-        $node = new CampaignNode('node_1', 'Trigger', CampaignNode::TYPE_TRIGGER, 'form_submit');
+        $triggerNode = new CampaignNode('node_1', 'Trigger', CampaignNode::TYPE_TRIGGER, 'form_submit');
         $outcome = new CampaignOutcome('out_1', 'node_2');
-        $node->addOutcome($outcome);
+        $triggerNode->addOutcome($outcome);
         
         $actionNode = new CampaignNode('node_2', 'Send Email', CampaignNode::TYPE_ACTION, 'email');
+        $endOutcome = new CampaignOutcome('out_2', 'node_3');
+        $actionNode->addOutcome($endOutcome);
+        
+        $notificationNode = new CampaignNode('node_3', 'Notify', CampaignNode::TYPE_NOTIFICATION, 'email');
         
         $this->campaign->addTrigger(new CampaignTrigger('trig_1', 'Form Submit', CampaignTrigger::EVENT_FORM_SUBMIT));
-        $this->campaign->addNode($node);
+        $this->campaign->addNode($triggerNode);
         $this->campaign->addNode($actionNode);
+        $this->campaign->addNode($notificationNode);
         
         $errors = $this->campaign->validate();
         
-        $this->assertEmpty($errors);
+        $this->assertEmpty($errors, 'Campaign validation errors: ' . implode(', ', $errors));
     }
 
     public function testScheduleCampaign(): void
     {
-        $startDate = new DateTime('2025-06-01');
-        $endDate = new DateTime('2025-12-31');
+        $startDate = new DateTime('+1 month');
+        $endDate = new DateTime('+6 months');
         
         $this->campaign->setStartsAt($startDate);
         $this->campaign->setEndsAt($endDate);
@@ -171,7 +176,7 @@ final class CampaignEntityTest extends TestCase
     {
         $node1 = new CampaignNode('node_1', 'Condition', CampaignNode::TYPE_CONDITION, 'score');
         $outcome = new CampaignOutcome('out_1', 'node_2', 'High Score');
-        $outcome->setCondition('score > 50');
+        $outcome->setCondition('$score > 50');
         $outcome->setAsDefault(false);
         
         $node1->addOutcome($outcome);

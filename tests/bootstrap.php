@@ -3,8 +3,12 @@
  * PHPUnit Test Bootstrap
  */
 
-define('TB_PREF', 'fa_');
-define('INPUT_COOKIE', '');
+if (!defined('TB_PREF')) {
+    define('TB_PREF', 'fa_');
+}
+if (!defined('INPUT_COOKIE')) {
+    define('INPUT_COOKIE', '');
+}
 
 function db_query($sql) {
     return true;

@@ -46,6 +46,8 @@ class Campaign implements JsonSerializable
         $this->status = 'draft';
         $this->createdAt = new DateTime();
         $this->updatedAt = new DateTime();
+        $this->startsAt = null;
+        $this->endsAt = null;
         $this->nodes = [];
         $this->triggers = [];
         $this->isActive = false;

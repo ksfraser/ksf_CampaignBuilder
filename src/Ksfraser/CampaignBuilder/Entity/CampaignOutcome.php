@@ -119,15 +119,18 @@ class CampaignOutcome implements JsonSerializable
      */
     public function shouldFollow(array $contactData): bool
     {
-        if ($this->isDefault || !$this->condition) {
+        if ($this->isDefault || empty($this->condition)) {
             return true;
         }
 
         $condition = $this->condition;
-        $data = $contactData;
-
-        $result = eval('return ' . $condition . ';');
-        return $result;
+        $vars = [];
+        foreach ($contactData as $key => $value) {
+            $vars[] = '$' . $key . ' = ' . var_export($value, true) . ';';
+        }
+        $code = implode(' ', $vars) . ' return ' . $condition . ';';
+        $result = eval($code);
+        return (bool) $result;
     }
 
     /**

@@ -62,6 +62,7 @@ class CampaignNode implements JsonSerializable
         $this->outcomes = [];
         $this->positionX = 0;
         $this->positionY = 0;
+        $this->delay = null;
         $this->isEnabled = true;
     }
 
@@ -171,7 +172,7 @@ class CampaignNode implements JsonSerializable
      */
     public function getTargetNodeIds(): array
     {
-        return array_map(fn($o) => $o->getTargetNodeId(), $this->outcomes);
+        return array_values(array_map(fn($o) => $o->getTargetNodeId(), $this->outcomes));
     }
 
     /**
@@ -269,6 +270,14 @@ class CampaignNode implements JsonSerializable
     }
 
     /**
+     * Check if is terminal node (no outgoing required)
+     */
+    public function isTerminal(): bool
+    {
+        return $this->type === self::TYPE_TRIGGER || $this->type === self::TYPE_NOTIFICATION;
+    }
+
+    /**
      * Check if is action type
      */
     public function isAction(): bool
@@ -316,7 +325,7 @@ class CampaignNode implements JsonSerializable
         }
 
         $hasOutcomes = !empty($this->outcomes);
-        if (!$this->isTrigger() && !$hasOutcomes && $this->isEnabled) {
+        if (!$this->isTerminal() && !$hasOutcomes && $this->isEnabled) {
             $errors[] = "Node {$this->id}: connected nodes required";
         }
 
