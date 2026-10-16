@@ -4,7 +4,7 @@
  *
  * Represents a marketing campaign with workflow nodes
  *
- * @package Ksfraser\CampaignBuilder\Entity
+ * @package ksfraser\CampaignBuilder\Entity
  * @author KSFII
  * @copyright Copyright (c) 2025
  * @license MIT
@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Entity;
+namespace ksfraser\CampaignBuilder\Entity;
 
 use DateTime;
 use DateTimeInterface;

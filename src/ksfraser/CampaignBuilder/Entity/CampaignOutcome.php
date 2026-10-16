@@ -4,14 +4,14 @@
  *
  * Connection between workflow nodes (edges)
  *
- * @package Ksfraser\CampaignBuilder\Entity
+ * @package ksfraser\CampaignBuilder\Entity
  * @author KSFII
  * @license MIT
  */
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Entity;
+namespace ksfraser\CampaignBuilder\Entity;
 
 use JsonSerializable;
 

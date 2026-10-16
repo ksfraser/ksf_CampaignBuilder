@@ -4,20 +4,20 @@
  *
  * Executes campaigns, processes triggers and actions
  *
- * @package Ksfraser\CampaignBuilder\Service
+ * @package ksfraser\CampaignBuilder\Service
  * @author KSFII
  * @license MIT
  */
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Service;
+namespace ksfraser\CampaignBuilder\Service;
 
-use Ksfraser\CampaignBuilder\Entity\Campaign;
-use Ksfraser\CampaignBuilder\Entity\CampaignNode;
-use Ksfraser\CampaignBuilder\Entity\CampaignTrigger;
-use Ksfraser\CampaignBuilder\Entity\CampaignOutcome;
-use Ksfraser\CampaignBuilder\Repository\CampaignRepositoryInterface;
+use ksfraser\CampaignBuilder\Entity\Campaign;
+use ksfraser\CampaignBuilder\Entity\CampaignNode;
+use ksfraser\CampaignBuilder\Entity\CampaignTrigger;
+use ksfraser\CampaignBuilder\Entity\CampaignOutcome;
+use ksfraser\CampaignBuilder\Repository\CampaignRepositoryInterface;
 use Psr\Log\LoggerInterface;
 
 /**

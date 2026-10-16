@@ -94,7 +94,7 @@ CampaignBuilder implements a node-based workflow engine for marketing campaign a
 
 ```
 ksf_CampaignBuilder/
-├── src/Ksfraser/CampaignBuilder/
+├── src/ksfraser/CampaignBuilder/
 │   ├── Entity/
 │   │   ├── Campaign.php
 │   │   ├── CampaignNode.php

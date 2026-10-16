@@ -2,18 +2,18 @@
 /**
  * Campaign Repository Interface
  *
- * @package Ksfraser\CampaignBuilder\Repository
+ * @package ksfraser\CampaignBuilder\Repository
  * @author KSFII
  * @license MIT
  */
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Repository;
+namespace ksfraser\CampaignBuilder\Repository;
 
-use Ksfraser\CampaignBuilder\Entity\Campaign;
-use Ksfraser\CampaignBuilder\Entity\CampaignNode;
-use Ksfraser\CampaignBuilder\Entity\CampaignTrigger;
+use ksfraser\CampaignBuilder\Entity\Campaign;
+use ksfraser\CampaignBuilder\Entity\CampaignNode;
+use ksfraser\CampaignBuilder\Entity\CampaignTrigger;
 
 /**
  * Repository interface for campaign persistence

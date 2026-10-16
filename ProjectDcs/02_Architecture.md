@@ -18,7 +18,7 @@
 
 ```
 ksf_CampaignBuilder/
-├── src/Ksfraser/CampaignBuilder/
+├── src/ksfraser/CampaignBuilder/
 │   ├── CampaignBuilder.php      # Main builder class
 │   ├── Canvas/                   # Visual canvas components
 │   └── Analytics/                # Performance tracking
@@ -32,7 +32,7 @@ ksf_CampaignBuilder/
 ### 2.1 CampaignBuilder
 
 ```php
-namespace Ksfraser\CampaignBuilder;
+namespace ksfraser\CampaignBuilder;
 
 class CampaignBuilder {
     

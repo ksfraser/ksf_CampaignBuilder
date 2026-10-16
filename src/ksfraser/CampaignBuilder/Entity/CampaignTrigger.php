@@ -4,14 +4,14 @@
  *
  * Defines what starts a campaign (triggers)
  *
- * @package Ksfraser\CampaignBuilder\Entity
+ * @package ksfraser\CampaignBuilder\Entity
  * @author KSFII
  * @license MIT
  */
 
 declare(strict_types=1);
 
-namespace Ksfraser\CampaignBuilder\Entity;
+namespace ksfraser\CampaignBuilder\Entity;
 
 use DateTime;
 use DateTimeInterface;

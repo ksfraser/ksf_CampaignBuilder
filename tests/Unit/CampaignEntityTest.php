@@ -2,20 +2,20 @@
 /**
  * CampaignEntityTest
  *
- * @package Ksfraser\CampaignBuilder\Tests
+ * @package ksfraser\CampaignBuilder\Tests
  * @author KSFII
  * @license MIT
  */
 
 declare(strict_types=1);
 
-namespace Ksfraser\Unit;
+namespace ksfraser\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Ksfraser\CampaignBuilder\Entity\Campaign;
-use Ksfraser\CampaignBuilder\Entity\CampaignNode;
-use Ksfraser\CampaignBuilder\Entity\CampaignTrigger;
-use Ksfraser\CampaignBuilder\Entity\CampaignOutcome;
+use ksfraser\CampaignBuilder\Entity\Campaign;
+use ksfraser\CampaignBuilder\Entity\CampaignNode;
+use ksfraser\CampaignBuilder\Entity\CampaignTrigger;
+use ksfraser\CampaignBuilder\Entity\CampaignOutcome;
 use DateTime;
 
 final class CampaignEntityTest extends TestCase
